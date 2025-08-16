@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Crear DataFrame de ejemplo
+df = pd.DataFrame({
+    "Nombre": ["Ana", "Luis", "Carlos", "Marta", "Sofía"],
+    "Edad": [23, 35, 31, 28, 22],
+    "Ciudad": ["San Salvador", "Santa Ana", "San Miguel", "La Libertad", "Usulután"]
+})
+
+# Guardar el CSV usando punto y coma como separador
+df.to_csv("datos.csv", index=False, sep=";", encoding="utf-8")
+print("✅ Archivo 'datos.csv' creado correctamente.")
+
+# Leer el CSV especificando el mismo separador
+df_leido = pd.read_csv("datos.csv", sep=";", encoding="utf-8")
+print("\n📂 Datos leídos desde el CSV:\n")
+print(df_leido)
